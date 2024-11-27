@@ -146,7 +146,8 @@ async function MotorPrincipal(p1, p2){
         } else if (TotalTesteHab1 < TotalTesteHab2) {
             console.log(`${p2.nome} marcou um ponto`);
             p2.pontos++;;
-        }
+        } 
+        
 
         console.log("-----------------------------------------------------");
     }
