@@ -1,0 +1,2 @@
+getBlocosEscolhidos();
+MotorPrincipal();
