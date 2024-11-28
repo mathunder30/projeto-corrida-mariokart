@@ -61,11 +61,13 @@ async function getBlocosEscolhidos() {
    }
 }
 
+// manipulando o evento ao clicar poder executar as funções MotorPrincipal() e DeclararVencedor()
 document.getElementById('start').addEventListener('click', async()=>{
     await MotorPrincipal(player1, player2);
     await DeclararVencedor(player1, player2);
 });
 
+// função que mostra o resultado da contagem.
 async function logRollResult(caracteristicaNome, bloco, resultado, atributo) {
     const logDiv = document.getElementById('log');
     logDiv.innerHTML += `<p>${caracteristicaNome} 🎲 rolou um dado de ${bloco}: ${resultado} + ${atributo} = ${resultado + atributo}</p>`;
@@ -73,6 +75,8 @@ async function logRollResult(caracteristicaNome, bloco, resultado, atributo) {
     
 }
 
+//função onde a magica acontece
+// ela recebera as funções getBlocosEscolhidos() para escolher a forma da corrida e função RolarDados(). o resultado recebe essa função para fazer o calculo. 
 async function MotorPrincipal(p1, p2) {
     for(let round = 1; round <=5; round++){
 
@@ -133,6 +137,8 @@ async function MotorPrincipal(p1, p2) {
     }
 }
 
+
+// função de declarar o vencedor
 async function DeclararVencedor(p1,p2) {
     const logDiv = document.getElementById("log");
     logDiv.innerHTML += `<p> Resultado final:  </p>`;
@@ -152,6 +158,8 @@ async function DeclararVencedor(p1,p2) {
 
 }
 
+// função para dar animação ao gif quando o personagem vence.
+// a animação tem duração de 3 segundos...
 async function destacarVencedor(p1) {
     const gifElement = document.querySelector(`#${p1} img`);
     gifElement.classList.add("vencedor");
