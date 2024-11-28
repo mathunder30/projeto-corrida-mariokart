@@ -104,7 +104,12 @@ async function MotorPrincipal(p1, p2) {
 
         } else if (bloco === "CONFRONTO"){
 
-            logDiv.innerHTML += `<p>${p1.nome} confrontou 🥊 com ${p2.nome}</p>`
+            logDiv.innerHTML += `<p>${p1.nome} confrontou 🥊 com ${p2.nome}</p>`;
+
+            await logRollResult(p1.nome, "poder", resultado1, p1.poder);
+            await logRollResult(p2.nome, "poder", resultado2, p2.poder);
+
+
             if(resultado1 + p1.poder > resultado2 + p2.poder){
                 if(p2.pontos > 0) p2.pontos--;
                 logDiv.innerHTML += `<p>${p1.nome} venceu o confronto! 😎 ${p2.nome} perdeu 1 ponto! </p>`;
@@ -130,7 +135,7 @@ async function MotorPrincipal(p1, p2) {
 
 async function DeclararVencedor(p1,p2) {
     const logDiv = document.getElementById("log");
-    logDiv.innerHTML += `<p> Resultado final </p>`;
+    logDiv.innerHTML += `<p> Resultado final:  </p>`;
     logDiv.innerHTML += `<p>${p1.nome}: ${p1.pontos} ponto(s) </p> `;
     logDiv.innerHTML += `<p>${p2.nome}: ${p2.pontos} ponto(s) </p> `;
 
