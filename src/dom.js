@@ -141,11 +141,24 @@ async function DeclararVencedor(p1,p2) {
 
     if(p1.pontos > p2.pontos){
         logDiv.innerHTML += `<p>\n ${p1.nome} venceu a corrida! 🏆 parabéns! </p> `;
+        destacarVencedor("player1");
 
     } else if (p2.pontos > p1.pontos){
         logDiv.innerHTML += `<p>\n ${p2.nome} venceu a corrida! 🏆 parabéns! </p> `;
+        destacarVencedor("player2");
     } else {
         logDiv.innerHTML += `<p> A corrida terminou em empate! </p> `;
     }
 
 }
+
+async function destacarVencedor(p1) {
+    const gifElement = document.querySelector(`#${p1} img`);
+    gifElement.classList.add("vencedor");
+
+    setTimeout(() =>{
+        gifElement.classList.remove("vencedor");
+    }, 3000);
+    
+}
+
