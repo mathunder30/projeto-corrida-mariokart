@@ -1,7 +1,7 @@
 {
-  "name": "aula1",
-  "version": "1.0.0",
-  "description": "meu primeiro projeto nodejs",
+  "name": "projeto-corrida-mario-card",
+  "version": "2.0.0",
+  "description": "Um jogo de simulação de corrida baseado em JavaScript, onde personagens competem em diferentes cenários. O projeto utiliza lógica de programação, manipulação do DOM e elementos visuais, como GIFs animados, para criar uma experiência interativa. Futuras implementações incluem efeitos sonoros, seleção de personagens e um leaderboard para ranking de corridas.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
