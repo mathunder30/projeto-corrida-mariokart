@@ -67,11 +67,24 @@ document.getElementById('start').addEventListener('click', async()=>{
     await DeclararVencedor(player1, player2);
 });
 
+//ao cliclar em recomeçar, faço que o jogo seja reiniciado sem precisar de ficar recarregando a pagina
+document.getElementById('restart').addEventListener('click', async() =>{
+    document.getElementById('log').innerHTML = "";
+    player1.pontos = 0;
+    player2.pontos = 0;
+    document.getElementById('score1').innerHTML = player1.pontos;
+    document.getElementById('score2').innerHTML = player2.pontos;
+});
+
 // função que mostra o resultado da contagem.
 async function logRollResult(caracteristicaNome, bloco, resultado, atributo) {
     const logDiv = document.getElementById('log');
     logDiv.innerHTML += `<p>${caracteristicaNome} 🎲 rolou um dado de ${bloco}: ${resultado} + ${atributo} = ${resultado + atributo}</p>`;
     logDiv.scrollTop = logDiv.scrollHeight;
+
+    // criei uma condição parar limirar a quantidade de mensagens dentro do log
+    const logs = logDiv.querySelectorAll('p, h3');
+    if(logs.length > 50) logs[0].remove();
     
 }
 
@@ -170,3 +183,5 @@ async function destacarVencedor(p1) {
     
 }
 
+
+    
